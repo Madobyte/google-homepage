@@ -52,7 +52,7 @@ header a {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 35%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -116,6 +116,7 @@ form p a {
 footer {
   display: flex;
   flex-direction: column;
+  min-width: 450px;
   background-color: rgb(240, 240, 240);
   position: absolute;
   bottom: 0%;
@@ -132,21 +133,32 @@ footer a {
 footer > div {
   min-height: 2.5rem;
   border-top: 1px solid rgb(197, 197, 197);
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 #footer-link {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 #footer-link > ul {
-    list-style-type: none;
-}
-#footer-link ul:first-child {
-    min-width: 450px;
+  list-style-type: none;
 }
 #footer-link ul:last-child {
-    min-width: 250px;
+  margin-left: auto;
 }
 #footer-link li {
-    display: inline-block;
+  display: inline-block;
+}
+@media only screen and (max-width: 932px) {
+  #footer-link ul {
+    margin: auto;
+  }
+  #footer-link ul:last-child {
+    order: -1;
+  }
+}
+@media only screen and (max-width: 380px) {
+  header {
+    display: none;
+  }
 }
